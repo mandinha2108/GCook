@@ -1,0 +1,25 @@
+configuração da conta local do GIT:
+git config --global user.name mandinha2108
+git config --global user.email amafur8@gmail.com
+
+Criar um projeto AspNet MVC
+
+dotnet new mvc -o GCook
+
+dotnet new sln --name GCook
+
+dotnet sln add GCook\GCook.csproj
+
+executar o projeto
+dotnet run
+dotnet watch run
+dotnet watch run --project FramaFlix/
+
+instalar pacotes no projeto:
+   1 - Usar o site nuget.org e o dotnet CLI
+
+   dotnet add package Microsoft.EntityFrameworkCore --version 8.0.4
+
+   2 - Usar extensões do CODE como Nuget Gallery 
+    Shift + Ctrl + P 
+    Digitar Nuget
