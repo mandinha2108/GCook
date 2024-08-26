@@ -23,3 +23,19 @@ instalar pacotes no projeto:
    2 - Usar extensões do CODE como Nuget Gallery 
     Shift + Ctrl + P 
     Digitar Nuget
+
+Criando e Executando migrações:
+ Verificar se tem a ferramenta
+   dotnet ef
+
+ Instalar a ferramenta:
+   dotnet tool install --global dotnet-ef --version 8.0.8
+
+ Atualizar a ferramenta:
+   dotnet tool update --global dotnet-ef --version 8.0.8
+
+ Criar uma migração:
+  dotnet ef migrations add criarBanco
+
+  Aplicar a migração:
+   dotnet ef database update
