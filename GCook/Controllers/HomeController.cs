@@ -38,13 +38,17 @@ public class HomeController : Controller
         return View(home);
     }
 
-    public IActionResult Privacy()
+    public IActionResult Receita(int id)
     {
-        return View();
+        Receita receita = _context.Receitas
+          .Include(r => r.Categoria)
+          .Include(r => r.Ingredientes)
+          .ThenInclude(ri => ri.Ingrediente)
+          .AsNoTracking()
+          .FirstOrDefault(r => r.Id == id);
+        return View(receita);
     }
-
-    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-    public IActionResult Error()
+      public IActionResult Error()
     {
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
