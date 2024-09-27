@@ -1,23 +1,23 @@
 using GCook.Data;
+using GCook.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-// Adicionar um serviço de conexão com o banco de dados 
 string conexao = builder.Configuration.GetConnectionString("conexao");
 var versao = ServerVersion.AutoDetect(conexao);
 builder.Services.AddDbContext<AppDbContext>(
    options => options.UseMySql(conexao, versao)
 );
-
-// Adicionar um serviço de gestão de usúarios
 builder.Services.AddIdentity<IdentityUser, IdentityRole>()
-    .AddEntityFrameworkStores<AppDbContext>()
-    .AddDefaultTokenProviders();
+.AddEntityFrameworkStores<AppDbContext>()
+.AddDefaultTokenProviders();
 
 builder.Services.AddControllersWithViews();
+builder.Services.AddTransient<IUsuarioService, UsuarioService>();
+builder.Services.AddTransient<IEmailSender,EmailSender>();
 
 var app = builder.Build();
 
@@ -34,6 +34,7 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(
