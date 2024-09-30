@@ -1,0 +1,20 @@
+@model GCook.ViewModels.LoginVM
+@{
+    ViewData["Title"] = "Login";
+    ViewData["SubTitle"] = "Entrar";
+    Layout = "~/Views/Shared/_LayoutAccont.cshtml";
+}
+
+<form class="form-signin" method="post">
+    <div asp-asp-validation-summary="ModelOnly" hidden></div>
+    <input type="hidden" asp-for="UrlRetorno">
+
+    <div class="form-floating mb-3">
+        <input asp-for="Email" class="form-control">
+        <label asp-for="Email"></label>]
+        <span asp-validation-for="Email" class="text-danger text-sm"></span>
+    </div>
+    <div class="form-floating mb-3">
+        <input asp-for="Senha" class
+    </div>
+</form>
