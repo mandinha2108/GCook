@@ -42,3 +42,5 @@ Criando e Executando migrações:
 
 para criar um crontroller com crud:
 dotnet-aspnet-codegenerator controller -name CategoriasController -m Categoria -dc AppDbContext -outDir Controllers -l "~/Views/Shared/_LayoutAdmin.cshtml"
+
+dotnet-aspnet-codegenerator controller -name ReceitasController -m Receita -dc AppDbContext -outDir Controllers -l "~/Views/Shared/_LayoutAdmin.cshtml"

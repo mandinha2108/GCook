@@ -269,7 +269,7 @@ public class AppDbSeed
 
         List<Usuario> usuarios = new(){
             new Usuario(){
-                UsuarioId = users[0].Id,
+                UsuarioId = "ddf093a6-6cb5-4ff7-9a64-83da34aee005",
                 Nome = "Amanda Furtado",
                 DataNascimento = DateTime.Parse("21/08/2007"),
                 Foto = "/img/usuarios/avatar.png"

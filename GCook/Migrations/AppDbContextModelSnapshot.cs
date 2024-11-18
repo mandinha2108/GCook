@@ -17,7 +17,7 @@ namespace GCook.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "8.0.8")
+                .HasAnnotation("ProductVersion", "8.0.10")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
             MySqlModelBuilderExtensions.AutoIncrementColumns(modelBuilder);
@@ -576,15 +576,15 @@ namespace GCook.Migrations
                         {
                             Id = "ddf093a6-6cb5-4ff7-9a64-83da34aee005",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "0fd11c20-e107-449f-ae2e-ddbb14c46f66",
+                            ConcurrencyStamp = "efdf6f01-93f4-4758-897c-ba7ee467e68b",
                             Email = "admin@gcook.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@GCOOK.COM",
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAIAAYagAAAAEGFnLoKYsR34Pj69c/w4+xZBxQgHC7IY1uBL3dsmy3RNGaQLQY6Rv4zi9aQ0S1i8Lg==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEPd67HyyZOtPXDpTFAeR/ubcH0097W4XAonydSzVfeaTSf+shRN+Wx7UI4jVb7VYlw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "5763f6af-48cf-4aba-a10d-b5648dff0411",
+                            SecurityStamp = "36363c23-c238-46cf-93f4-9ded6bbb3bb6",
                             TwoFactorEnabled = false,
                             UserName = "Admin"
                         });

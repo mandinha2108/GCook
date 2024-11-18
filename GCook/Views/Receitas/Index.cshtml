@@ -1,0 +1,79 @@
+@model IEnumerable<GCook.Models.Receita>
+
+@{
+    ViewData["Title"] = "Receitas";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Descricao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TempoPreparo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rendimento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Dificuldade)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Preparo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Categoria)
+            </th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descricao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TempoPreparo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rendimento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Dificuldade)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Preparo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Categoria.Nome)
+            </td>
+            <td>
+                <a class="text-decoration-none me-2" asp-action="Edit" asp-route-id="@item.Id">
+                    <i class="bi bi-pencil text-warning " title="Alterar"></i>
+                </a> |
+                <a class="text-decoration-none me-2" asp-action="Details" asp-route-id="@item.Id">
+                     <i class="bi bi-search text-info" title="Detalhes"></i>
+                </a> |
+                <a class="text-decoration-none" asp-action="Delete" asp-route-id="@item.Id">
+                    <i class="bi bi-trash text-danger" title="Excluir "></i>
+
+                </a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
