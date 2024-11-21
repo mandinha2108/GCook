@@ -1,7 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -12,11 +9,13 @@ namespace GCook.Controllers
 {
     public class ReceitasController : Controller
     {
-        private readonly AppDbContext _context;
+        private readonly AppDbContext _context;        
+        private readonly IWebHostEnvironment _host;
 
-        public ReceitasController(AppDbContext context)
+        public ReceitasController(AppDbContext context, IWebHostEnvironment host)
         {
             _context = context;
+            _host = host;
         }
 
         // GET: Receitas
@@ -57,7 +56,7 @@ namespace GCook.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Nome,Descricao,TempoPreparo,Rendimento,Dificuldade,Foto,Preparo,CategoriaId")] Receita receita)
+        public async Task<IActionResult> Create([Bind("Id,Nome,Descricao,TempoPreparo,Rendimento,Dificuldade,Foto,Preparo,CategoriaId")] Receita receita, IFormFile Foto)
         {
             if (ModelState.IsValid)
             {
